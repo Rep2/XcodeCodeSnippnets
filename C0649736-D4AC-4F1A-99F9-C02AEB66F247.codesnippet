@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>ClassImplementation</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>let id:Int
+
+    init(id:Int){
+        self.id = id
+
+    }
+
+    static func createInstanceFromJSON(data:[String:AnyObject]) -&gt; Categorie{
+        return Categorie(id: data["id"] as? Int ?? -1)
+    }</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>C0649736-D4AC-4F1A-99F9-C02AEB66F247</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>Model subclass</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>0</integer>
+</dict>
+</plist>

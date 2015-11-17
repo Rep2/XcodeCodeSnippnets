@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>TopLevel</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>class Interactor:Interactor{
+    
+    override init() {
+        super.init()
+        
+        route = ""
+    }
+    
+    override func get(forceRefresh:Bool = false, params:[String:String]? = nil, callbackFunc:((success:Bool, data:Any) -&gt; Void)? = nil) -&gt; Any?{
+        
+        if self.data == nil || forceRefresh == true{
+            GetHTTPRequest(route: route, listener: set(params, callbackFunc:callbackFunc)).startInteraction()
+            return nil
+        }else{
+            return self.data
+        }
+    }
+    
+    override func set(params:[String:String]? = nil, callbackFunc:((success:Bool, data:Any) -&gt; Void)? = nil)(success:Bool, data:AnyObject){
+    
+        self.data = createInstanceFromJSON(data) as? [Survey]
+
+        if let callbackFunc = callbackFunc{
+            callbackFunc(success: success, data: self.data!)
+        }
+    }
+    
+    override func createInstanceFromJSON(data:AnyObject) -&gt; Any{
+        return []
+    }
+    
+}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>A64C0D08-F4C3-4460-9DA5-2F953CE0F530</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>Interactor subclass</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>0</integer>
+</dict>
+</plist>
